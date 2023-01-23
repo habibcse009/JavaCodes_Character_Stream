@@ -1,4 +1,4 @@
-# CSE_Lab_Codes
+# CSE_Lab_Codes for Character, Stream & String
 Java codes for Lab Classes of Computer Science &amp; Engineering's Courses<br>
 #### Example 1: A java code to count character, word, special character, white spaces from a string inputed by user
 
