@@ -270,19 +270,19 @@ public class CheckComment {
 Output-1:
 Enter a word: 
 123
-123 is Constant
+123 is Constant <br>
 Output-2:
 Enter a word: 
 if
-if is Keyword
+if is Keyword <br>
 Output-3:
 Enter a word: 
 #123 hei
-#123 hei is Invalid Identifier
+#123 hei is Invalid Identifier <br>
 Output-4:
 Enter a word: 
 hello world
-hello habib is Valid Identifier
+hello habib is Valid Identifier <br>
 Output-5:
 Enter a word: 
 //hello
