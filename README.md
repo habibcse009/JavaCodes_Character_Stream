@@ -265,26 +265,24 @@ public class CheckComment {
 }
 ```
 
-#### Output :
-
-Output-1:
-Enter a word: 
-123
+##### Output-1: <br>
+Enter a word:  <br>
+123 <br>
 123 is Constant <br>
-Output-2:
-Enter a word: 
-if
+##### Output-2: <br>
+Enter a word:  <br>
+if <br>
 if is Keyword <br>
-Output-3:
-Enter a word: 
-#123 hei
+##### Output-3: <br>
+Enter a word:  <br>
+#123 hei <br>
 #123 hei is Invalid Identifier <br>
-Output-4:
-Enter a word: 
-hello world
+##### Output-4: <br>
+Enter a word:  <br>
+hello world <br>
 hello habib is Valid Identifier <br>
-Output-5:
-Enter a word: 
-//hello
-Given String is a comment
+##### Output-5: <br>
+Enter a word:  <br>
+//hello <br>
+Given String is a comment <br>
 
