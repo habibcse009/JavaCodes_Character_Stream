@@ -169,3 +169,122 @@ public class CharacterCountFromFile {
 #### Input File : [testtext.txt](https://github.com/habibcse009/JavaCodes_Character_Stream/files/10478460/testtext.txt)
 
 #### Output :![Screenshot 2023-01-23 154551](https://user-images.githubusercontent.com/27882232/214009348-60a56688-fb84-408a-8032-6c7e50955b6a.jpg)
+
+***
+#### Example 5: A java code to Determine whether a given input is keyword or valid identifier or invalid identifier or constant or comments.
+
+```
+import java.util.Scanner;
+
+public class CheckComment {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		String word;
+		int n;
+		boolean contants = false,valid_identidier=false,invalid_identidier=false;
+		System.out.println("Enter a word: ");
+		word=scan.nextLine();
+		word.trim();
+		n=word.length();
+		if ((word.charAt(0)=='/' && word.charAt(1)=='/') || (word.charAt(0)=='/' && word.charAt(1)=='*'
+				&& word.charAt(n-1)=='/' && word.charAt(n-2)=='*')) {
+			System.out.println("Given String is a comment");
+		}
+
+
+
+		else if (word.contains("if") || word.contains("else") || word.contains("while")
+				|| word.contains("do") || word.contains("extern") || word.contains("auto")
+				|| word.contains("finally")  || word.contains("global") || word.contains("false")
+				|| word.contains("true") || word.contains("for") || word.contains("form")) {
+			System.out.println(word+" is Keyword");
+		}
+		else {
+			for(int i=0;i<word.length();i++) {
+				if (word.charAt(i)=='.' || word.charAt(i)=='0' || word.charAt(i)=='1' || word.charAt(i)=='2' || word.charAt(i)=='3' 
+						|| word.charAt(i)=='4' || word.charAt(i)=='5' || word.charAt(i)=='6' 
+						|| word.charAt(i)=='7' || word.charAt(i)=='8' || word.charAt(i)=='9') {
+					contants=true;
+				}
+				else {
+					contants=false;
+					break;
+				}
+
+			}
+
+
+			if((word.charAt(0)>='a' &&  word.charAt(0)<='z') || 
+					(word.charAt(0)>='A' &&  word.charAt(0)<='Z') || 
+					word.charAt(0)=='_') {
+
+				for (int i = 1; i < word.length(); i++) {
+					if((word.charAt(i)>='0' &&  word.charAt(i)<='9') ||
+							(word.charAt(i)>='a' &&  word.charAt(i)<='z') || 
+							(word.charAt(i)>='A' &&  word.charAt(i)<='Z') || 
+							word.charAt(0)=='_') {
+						valid_identidier=true;						
+					}
+					else if (word.charAt(0)=='-' || word.charAt(i)=='.' || word.charAt(i)=='0' || word.charAt(i)=='1' || word.charAt(i)=='2' || word.charAt(i)=='3' 
+							|| word.charAt(i)=='4' || word.charAt(i)=='5' || word.charAt(i)=='6' 
+							|| word.charAt(i)=='7' || word.charAt(i)=='8' || word.charAt(i)=='9') {
+						contants=true;
+					}
+					else {
+						invalid_identidier=true;
+						break;
+					}
+				}
+				if (valid_identidier==true) {
+					System.out.println(word+" is Valid Identifier");
+
+				}
+				else if (invalid_identidier==true && contants==false) {
+					System.out.println(word+" is Invalid Identifier");
+
+				}
+
+			}
+			else {
+				if (contants==false) {
+					System.out.println(word+" is Invalid Identifier");
+
+				}
+
+			}
+
+			if (contants==true) {
+
+				System.out.println(word+" is Constant");
+			}
+
+		}
+	}
+
+}
+```
+
+#### Output :
+
+Output-1:
+Enter a word: 
+123
+123 is Constant
+Output-2:
+Enter a word: 
+if
+if is Keyword
+Output-3:
+Enter a word: 
+#123 hei
+#123 hei is Invalid Identifier
+Output-4:
+Enter a word: 
+hello world
+hello habib is Valid Identifier
+Output-5:
+Enter a word: 
+//hello
+Given String is a comment
+
